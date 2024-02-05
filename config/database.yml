@@ -16,7 +16,7 @@ default: &default
 development:
   <<: *default
   adapter: mysql2
-  sername: root
+  username: root
   password:
   host: localhost
   database: furima_39954_development
