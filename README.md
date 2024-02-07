@@ -2,16 +2,16 @@
 
 ## users テーブル
 
-| Column             | Type   | Options     |
-| ------------------ | ------ | ----------- |
-| name               | string | null: false |
-| email              | string | null: false |
-| encrypted_password | string | null: false |
-| fast               | string | null: false |
-| last               | string | null: false |
-| fast_read          | string | null: false |
-| last_read          | string | null: false |
-| birth              | date   | null: false |
+| Column             | Type   | Options                   |
+| ------------------ | ------ | ------------------------- |
+| name               | string | null: false               |
+| email              | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
+| fast               | string | null: false               |
+| last               | string | null: false               |
+| fast_read          | string | null: false               |
+| last_read          | string | null: false               |
+| birth              | date   | null: false               |
 
 ### Association
 
@@ -42,8 +42,7 @@
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | item   | references | null: false, foreign_key: true |
-| price  | references | null: false, foreign_key: true |
-| users  | references | null: false, foreign_key: true |
+| user   | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -53,14 +52,16 @@
 
 ## addresses テーブル
 
-| Column    | Type    | Options     |
-| --------- | ------- | ------------|
-| post_code | string  | null: false |
-| pref_id   | integer | null: false |
-| munic     | string  | null: false |
-| address   | string  | null: false |
-| building  | string  |             |
-| tel       | string  | null: false |
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| post_code | string     | null: false                    |
+| pref_id   | integer    | null: false                    |
+| munic     | string     | null: false                    |
+| address   | string     | null: false                    |
+| building  | string     |                                |
+| tel       | string     | null: false                    |
+| item      | references | null: false, foreign_key: true |
+| user      | references | null: false, foreign_key: true |
 
 ### Association
 
