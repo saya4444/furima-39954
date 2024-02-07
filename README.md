@@ -30,7 +30,7 @@
 | pref_id      | integer    | null: false                    |
 | period_id    | integer    | null: false                    |
 | price        | integer    | null: false                    |
-| users        | references | null: false, foreign_key: true |
+| user         | references | null: false, foreign_key: true |
 
 ### Association
 
@@ -60,8 +60,7 @@
 | address   | string     | null: false                    |
 | building  | string     |                                |
 | tel       | string     | null: false                    |
-| item      | references | null: false, foreign_key: true |
-| user      | references | null: false, foreign_key: true |
+| order     | references | null: false, foreign_key: true |
 
 ### Association
 
