@@ -28,7 +28,7 @@
 | condition_id | integer    | null: false                    |
 | burden_id    | integer    | null: false                    |
 | pref_id      | integer    | null: false                    |
-| days_id      | string     | null: false                    |
+| period_id    | integer    | null: false                    |
 | price        | integer    | null: false                    |
 | users        | references | null: false, foreign_key: true |
 
