@@ -1,11 +1,11 @@
 class Item < ApplicationRecord
 
   extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to_active_hash :category, class_name: 'ActiveHash::Category'
-  belongs_to_active_hash :condition, class_name: 'ActiveHash::Condition'
-  belongs_to_active_hash :burden, class_name: 'ActiveHash::Burden'
-  belongs_to_active_hash :pref, class_name: 'ActiveHash::Pref'
-  belongs_to_active_hash :period, class_name: 'ActiveHash::Period'
+    belongs_to_active_hash :category
+    belongs_to_active_hash :condition
+    belongs_to_active_hash :burden
+    belongs_to_active_hash :pref
+    belongs_to_active_hash :period
 
 
   validates :image        , presence: true
