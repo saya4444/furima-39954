@@ -1,3 +1,4 @@
+
 const item_price = () => {
   const priceInput = document.getElementById("item-price");
   if (priceInput) {   // この行を追加
@@ -15,3 +16,4 @@ const item_price = () => {
 
 window.addEventListener("turbo:load", item_price);
 window.addEventListener("turbo:render", item_price);
+
