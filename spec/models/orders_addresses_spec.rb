@@ -117,14 +117,4 @@ RSpec.describe OrdersAddresses, type: :model do
 
     end
   end
-
-
-
-
-
-
-
-
-
-
 end
