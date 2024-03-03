@@ -3,7 +3,10 @@ require 'rails_helper'
 RSpec.describe OrdersAddresses, type: :model do
 
   before do
-    @orders_addresses = FactoryBot.build(:orders_addresses)
+    user = FactoryBot.create(:user)
+    item = FactoryBot.create(:item)
+    @orders_addresses = FactoryBot.build(:orders_addresses, user_id: user.id, item_id: item.id)
+    sleep(1)
   end
 
   describe '商品購入機能' do
@@ -85,8 +88,14 @@ RSpec.describe OrdersAddresses, type: :model do
         expect(@orders_addresses.errors.full_messages).to include("Tel is invalid")
       end
 
-      it 'telが10桁または11桁でないと購入できない' do
+      it 'telが9桁以下では登録できないこと' do
         @orders_addresses.tel = '123456789'
+        @orders_addresses.valid?
+        expect(@orders_addresses.errors.full_messages).to include("Tel is invalid")
+      end
+
+      it 'telが12桁以上では登録できないこと' do
+        @orders_addresses.tel = '123456789012'
         @orders_addresses.valid?
         expect(@orders_addresses.errors.full_messages).to include("Tel is invalid")
       end
